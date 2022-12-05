@@ -7,7 +7,7 @@ const { it } = require('node:test')
 router.post('/additem',async(req,res,next)=>{
 
     try {
-        const {text,categoryname}= req.body
+        const {text,endtext,categoryname}= req.body
     const findcat=await Category.findOne({
         name:categoryname
     })
@@ -28,6 +28,7 @@ router.post('/additem',async(req,res,next)=>{
         {
         let item=new Item()
         item.text=text
+        item.endtext=endtext
         item.categoryname=categoryname
         await item.save()
         return res.status(200).json({

@@ -5,6 +5,10 @@ const ItemSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    endtext:{
+        type:String,
+        required:true
+    },
     categoryname:{
         type:String,
         required:true
